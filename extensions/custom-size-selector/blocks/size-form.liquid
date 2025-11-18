@@ -1,0 +1,34 @@
+<div id="custom-size-app-root" data-product-id="{{ product.id }}"></div>
+
+<script type="module" src="{{ 'custom-size-bundle.js' | asset_url }}"></script>
+<style>
+  .product-form__input,
+  .product-form__buttons,
+  variant-selects,
+  variant-radios,
+  [data-product-form] .product-form__submit,
+  .shopify-payment-button {
+    display: none !important;
+  }
+
+  .product__info-container .variant-picker,
+  .product__info-container .product-form__buttons {
+    display: none !important;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Özel Boyut Formu",
+  "target": "section",
+  "templates": ["product"],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Form Başlığı",
+      "default": "Ürününüzün Boyutlarını Girin"
+    }
+  ]
+}
+{% endschema %}
